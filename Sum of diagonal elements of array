@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFirstApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i, j,sum=0;
+            int[,] m1 = new int[3, 3];
+            Console.WriteLine("Enter the array elements");
+            for( i=0; i<3; i++)
+            {
+                for(j=0; j<3; j++)
+                {
+                    m1[i,j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Your matrix is");
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+                    Console.Write(m1[i, j] + "\t");
+                }
+                Console.WriteLine("");
+            }
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+                    if (i == j)
+                        sum += m1[i, j];
+                }
+            }
+            Console.WriteLine("Your sum of diagonal elements is : " + sum);
+            Console.ReadLine(); 
+        }
+    } 
+}
